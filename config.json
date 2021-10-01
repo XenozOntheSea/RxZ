@@ -5,9 +5,7 @@
     "autoCreateDB": true,
     "allowInbox": true,
     "autoClean": true,
-    "commandDisabled": [
-        "girlnude.js"
-    ],
+    "commandDisabled": [],
     "eventDisabled": [],
     "EMAIL": "",
     "PASSWORD": "",
@@ -15,7 +13,8 @@
     "BOTNAME": "",
     "PREFIX": "/",
     "ADMINBOT": [
-        "100069316502511"
+        "100069316502511",
+        "ADMINBOT2"
     ],
     "DATABASE": {
         "sqlite": {
