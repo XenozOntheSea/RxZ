@@ -14,7 +14,7 @@ module.exports.run = async function({ api, event, Users }) {
 	const { threadID } = event;
 	if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
 		api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "Nguyễn Mạnh Tuấn" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
-		return api.sendMessage(`Kết nối thành công\nKhông mượn bạn dùng con bot này <3`, threadID);
+		return api.sendMessage(`Kết nối thành công\nCảm mơn bạn đã sử dụng con bot này, lưu ý không spam tránh tình trạng die bot hãy là người dùng có ý thức\nMọi thắc mắc liên hệ Fb: https://www.facebook.com/MhTuanng203`, threadID);
 	}
 	else {
 		try {
@@ -41,7 +41,7 @@ module.exports.run = async function({ api, event, Users }) {
 			}
 			memLength.sort((a, b) => a - b);
 			
-			(typeof threadData.customJoin == "undefined") ? msg = "Welcome aboard {name}.\nChào mừng đã đến với {threadName}.\n{type} là thành viên thứ {soThanhVien} của nhóm 🥳" : msg = threadData.customJoin;
+			(typeof threadData.customJoin == "undefined") ? msg = "Chào mừng {name} đã đến với {threadName}.\n{type} là thành viên thứ {soThanhVien} của nhóm 🥳\nHãy mong chóng set biệt danh và gt nhé <3" : msg = threadData.customJoin;
 			msg = msg
 			.replace(/\{name}/g, nameArray.join(', '))
 			.replace(/\{type}/g, (memLength.length > 1) ?  'các bạn' : 'bạn')
